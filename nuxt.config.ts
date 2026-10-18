@@ -10,9 +10,7 @@ export default defineNuxtConfig({
 
   /* alias */
   alias: {
-    '@styles': fileURLToPath(
-        new URL('./app/assets/styles', import.meta.url)
-    ),
+    '@styles': fileURLToPath(new URL('./app/assets/styles', import.meta.url)),
   },
 
   /* Глобальные стили */

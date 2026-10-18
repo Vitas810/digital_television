@@ -1,0 +1,13 @@
+{
+  "printWidth": 120,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "semi": false,
+  "htmlWhitespaceSensitivity": "css",
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "vueIndentScriptAndStyle": false,
+  "singleAttributePerLine": true,
+  "quoteProps": "consistent"
+}

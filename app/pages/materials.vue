@@ -1,34 +1,37 @@
 <template>
-<section class="materials">
-  <div v-if="pending" class="_spinner"></div>
-  <div v-else-if="error">Не удалось загрузить материалы: {{ error.message }}</div>
+  <section class="materials">
+    <div
+      v-if="pending"
+      class="_spinner"
+    ></div>
+    <div v-else-if="error">Не удалось загрузить материалы: {{ error.message }}</div>
 
-  <template v-else-if="materials?.length">
-    <h1 class="materials__title">Материалы</h1>
+    <template v-else-if="materials?.length">
+      <h1 class="materials__title">Материалы</h1>
 
-    <div class="materials__list">
-      <Card
+      <div class="materials__list">
+        <Card
           v-for="material in materials"
           :key="material.id"
           :title="material.title"
           :description="material.short_description"
           :date="material.datetime"
-      />
-    </div>
-  </template>
+        />
+      </div>
+    </template>
 
-  <div v-else>Материалов пока нет.</div>
-</section>
+    <div v-else>Материалов пока нет.</div>
+  </section>
 </template>
 
 <script setup lang="ts">
 import { getMaterials } from '~/api/materials'
 
-const { data: materials, pending, error } = await useAsyncData(
-  'materials',
-  (_nuxtApp, { signal }) => getMaterials(signal),
-)
-
+const {
+  data: materials,
+  pending,
+  error,
+} = await useAsyncData('materials', (_nuxtApp, { signal }) => getMaterials(signal))
 </script>
 
 <style scoped lang="less">
@@ -59,6 +62,4 @@ const { data: materials, pending, error } = await useAsyncData(
     }
   }
 }
-
-
 </style>

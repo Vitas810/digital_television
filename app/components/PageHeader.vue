@@ -1,15 +1,25 @@
 <template>
-<header class="header">
-  <SvgoIcon name="logo" class="header__logo"></SvgoIcon>
-  <DButton class="header__btn" size="medium" aria-label="Создать историю">
-    <span class="header__btn-label">Создать историю</span>
-    <SvgoIcon name="add" class="header__btn-icon" aria-hidden="true" />
-  </DButton>
-</header>
+  <header class="header">
+    <SvgoIcon
+      name="logo"
+      class="header__logo"
+    ></SvgoIcon>
+    <DButton
+      class="header__btn"
+      size="medium"
+      aria-label="Создать историю"
+    >
+      <span class="header__btn-label">Создать историю</span>
+      <SvgoIcon
+        name="add"
+        class="header__btn-icon"
+        aria-hidden="true"
+      />
+    </DButton>
+  </header>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="less">
 @import (reference) '@styles/breakpoints.less';

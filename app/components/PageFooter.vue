@@ -1,14 +1,17 @@
 <template>
-<footer class="footer">
-  <div class="footer__wrapper content-wrapper">
-    <SvgoIcon name="logo" class="footer__logo"></SvgoIcon>
-    <div class="footer__copyright">© {{ currentYear }} «Моя планета»</div>
-  </div>
-</footer>
+  <footer class="footer">
+    <div class="footer__wrapper content-wrapper">
+      <SvgoIcon
+        name="logo"
+        class="footer__logo"
+      ></SvgoIcon>
+      <div class="footer__copyright">© {{ currentYear }} «Моя планета»</div>
+    </div>
+  </footer>
 </template>
 
 <script setup lang="ts">
-  const currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear()
 </script>
 
 <style scoped lang="less">

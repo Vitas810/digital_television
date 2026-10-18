@@ -1,22 +1,23 @@
 <template>
-  <button class="d-button" :class="baseClasses"><slot></slot></button>
+  <button
+    class="d-button"
+    :class="baseClasses"
+  >
+    <slot></slot>
+  </button>
 </template>
 
 <script setup lang="ts">
 const props = withDefaults(
-    defineProps<{
-      variant?: 'ghost' | string
-      color?: 'blue' | 'black'
-      size?: 'small' | 'medium'
-    }>(),
-    { color: 'blue' },
+  defineProps<{
+    variant?: 'ghost' | string
+    color?: 'blue' | 'black'
+    size?: 'small' | 'medium'
+  }>(),
+  { color: 'blue' },
 )
 
-const baseClasses = computed(() => [
-  props.variant,
-  `d-button--${props.color}`,
-  props.size && `d-button--${props.size}`,
-])
+const baseClasses = computed(() => [props.variant, `d-button--${props.color}`, props.size && `d-button--${props.size}`])
 </script>
 
 <style lang="less" scoped>
@@ -38,7 +39,7 @@ const baseClasses = computed(() => [
   padding: 10px;
 
   @media (min-width: @bp-m-max) {
-    padding: 10px var(--size-24)
+    padding: 10px var(--size-24);
   }
 
   @media (hover: hover) {
