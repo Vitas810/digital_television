@@ -1,9 +1,12 @@
 <template>
   <header class="header">
-    <SvgoIcon
-      name="logo"
-      class="header__logo"
-    ></SvgoIcon>
+    <NuxtLink to="/">
+      <SvgoIcon
+        name="logo"
+        class="header__logo"
+      ></SvgoIcon>
+    </NuxtLink>
+
     <DButton
       class="header__btn"
       size="medium"

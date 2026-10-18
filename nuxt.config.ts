@@ -5,6 +5,16 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  /* redirect */
+  routeRules: {
+    '/': {
+      redirect: {
+        to: '/materials',
+        statusCode: 302,
+      },
+    },
+  },
+
   /* Подключение модулей */
   modules: ['nuxt-svgo-loader'],
 

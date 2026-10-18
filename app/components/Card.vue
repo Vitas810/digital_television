@@ -1,5 +1,8 @@
 <template>
-  <div class="card">
+  <NuxtLink
+    class="card"
+    :to="`materials/${id}`"
+  >
     <div
       class="card__top"
       v-if="date"
@@ -22,7 +25,7 @@
     >
       {{ description }}
     </p>
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">
@@ -33,6 +36,7 @@ const props = withDefaults(
     title?: string
     description?: string
     date?: string
+    id?: string | number
   }>(),
   {},
 )
@@ -52,8 +56,9 @@ const { date, title, description } = toRefs(props)
   background-color: @white;
   width: 100%;
   border-radius: var(--size-24);
-  font-family: var(--font-futura);
+  font-family: var(--font-futura), sans-serif;
   box-sizing: border-box;
+  text-decoration: none;
 
   @media (hover: hover) {
     &:hover {
@@ -67,7 +72,7 @@ const { date, title, description } = toRefs(props)
     }
   }
 
-  @media (min-width: @bp-m-max) {
+  @media (min-width: @bp-m) {
     max-width: 276px;
     gap: var(--size-20);
   }
@@ -88,7 +93,7 @@ const { date, title, description } = toRefs(props)
       color: @lightGray;
     }
 
-    @media (min-width: @bp-m-max) {
+    @media (min-width: @bp-m) {
       font-size: var(--size-16);
 
       & .icon {
@@ -99,22 +104,22 @@ const { date, title, description } = toRefs(props)
   }
 
   & .card__title {
-    font-family: var(--font-source-sans);
+    font-family: var(--font-source-sans), sans-serif;
     font-weight: 600;
     font-size: var(--size-18);
     line-height: 120%;
     color: @black;
     margin: 0;
 
-    @media (min-width: @bp-m-max) {
+    @media (min-width: @bp-m) {
       font-size: var(--size-20);
     }
   }
 
   & .card__description {
-    font-family: var(--font-futura);
+    font-family: var(--font-futura), sans-serif;
     font-size: var(--size-14);
-    line-height: 100%;
+    line-height: var(--size-18);
     color: @gray;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -122,7 +127,7 @@ const { date, title, description } = toRefs(props)
     overflow: hidden;
     margin: 0;
 
-    @media (min-width: @bp-m-max) {
+    @media (min-width: @bp-m) {
       font-size: var(--size-16);
       line-height: 120%;
     }
