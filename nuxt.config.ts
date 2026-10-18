@@ -17,6 +17,7 @@ export default defineNuxtConfig({
 
   /* Глобальные стили */
   css: [
+    '~/assets/styles/variables.less',
     '~/assets/styles/fonts.less',
     '~/assets/styles/main.less',
     '~/assets/styles/helpers.less',

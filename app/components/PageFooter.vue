@@ -1,8 +1,10 @@
 <template>
-<div class="footer">
-  <SvgoIcon name="logo" class="footer__logo"></SvgoIcon>
-  <div class="footer__copyright">© {{ currentYear }} «Моя планета»</div>
-</div>
+<footer class="footer">
+  <div class="footer__wrapper content-wrapper">
+    <SvgoIcon name="logo" class="footer__logo"></SvgoIcon>
+    <div class="footer__copyright">© {{ currentYear }} «Моя планета»</div>
+  </div>
+</footer>
 </template>
 
 <script setup lang="ts">
@@ -14,21 +16,24 @@
 @import (reference) '@styles/colors.less';
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-shrink: 0;
   margin-top: auto;
-  padding: 12px 16px;
   background: @black;
 
-  @media (min-width: @bp-m-max) {
-    padding: 8px 16px;
+  & .footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--size-8) var(--size-16);
+
+    @media (min-width: @bp-m-max) {
+      padding: var(--size-16) var(--size-36);
+    }
   }
 
   & .footer__copyright {
     color: @lightGray;
-    font-size: 14px;
+    font-size: var(--size-14);
     line-height: 1.4;
   }
 }

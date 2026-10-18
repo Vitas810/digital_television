@@ -1,15 +1,17 @@
 <template>
 <div class="card">
-  <div class="card__top">
+  <div class="card__top" v-if="date">
     <SvgoIcon name="calendar" class="icon"></SvgoIcon>
-    21 сентября
+    {{ formatDate(date) }}
   </div>
-  <h2 class="card__title">Как у сов получается поворачивать голову на 270 градусов?</h2>
-  <p class="card__description">Известно, что совы — превосходные хищники. Причем они одинаково видят как днем, так и ночью. Известно, что совы — превосходные хищники. Причем они одинаково видят как днем, так и ночью. </p>
+  <h2 class="card__title" v-if="title">{{ title }}</h2>
+  <p class="card__description" v-if="description">{{ description }}</p>
 </div>
 </template>
 
 <script setup lang="ts">
+import {formatDate} from "~/utils/formatDate.ts";
+
 const props = withDefaults(
     defineProps<{
       title?: string
@@ -18,6 +20,8 @@ const props = withDefaults(
     }>(),
     {},
 )
+
+const { date, title, description } = toRefs(props)
 </script>
 
 <style scoped lang="less">
@@ -25,19 +29,38 @@ const props = withDefaults(
 @import (reference) '@styles/breakpoints.less';
 
   .card {
-    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-16);
+    padding: var(--size-24);
     background-color: @white;
-    max-width: 276px;
     width: 100%;
-    border-radius: 24px;
-    font-family: 'Futura PT', sans-serif;
+    border-radius: var(--size-24);
+    font-family: var(--font-futura);
     box-sizing: border-box;
+
+    @media (hover: hover) {
+      &:hover {
+        cursor: pointer;
+        box-shadow:
+            -2px 5px 13px 0 #0000000A,
+            -9px 21px 23px 0 #0000000A,
+            -21px 48px 31px 0 #00000005,
+            -37px 85px 37px 0 #00000003,
+            -57px 133px 40px 0 #00000000;
+      }
+    }
+
+    @media (min-width: @bp-m-max) {
+      max-width: 276px;
+      gap: var(--size-20);
+    }
 
     & .card__top {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 14px;
+      gap: var(--size-8);
+      font-size: var(--size-14);
       font-weight: 400;
       line-height: 100%;
       letter-spacing: 0;
@@ -50,7 +73,7 @@ const props = withDefaults(
       }
 
       @media (min-width: @bp-m-max) {
-        font-size: 16px;
+        font-size: var(--size-16);
 
         & .icon {
           width: 20px;
@@ -60,31 +83,31 @@ const props = withDefaults(
     }
 
     & .card__title {
-      font-family: 'Source Sans 3', sans-serif;
+      font-family: var(--font-source-sans);
       font-weight: 600;
-      font-size: 18px;
+      font-size: var(--size-18);
       line-height: 120%;
       color: @black;
-      margin: 16px 0;
+      margin: 0;
 
       @media (min-width: @bp-m-max) {
-        font-size: 20px;
-        margin: 20px 0;
+        font-size: var(--size-20);
       }
     }
 
     & .card__description {
-      font-family: 'Futura PT', sans-serif;
-      font-size: 14px;
+      font-family: var(--font-futura);
+      font-size: var(--size-14);
       line-height: 100%;
       color: @gray;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 4;
       overflow: hidden;
+      margin: 0;
 
       @media (min-width: @bp-m-max) {
-        font-size: 16px;
+        font-size: var(--size-16);
         line-height: 120%;
       }
     }

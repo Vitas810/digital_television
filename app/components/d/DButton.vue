@@ -7,6 +7,7 @@ const props = withDefaults(
     defineProps<{
       variant?: 'ghost' | string
       color?: 'blue' | 'black'
+      size?: 'small' | 'medium'
     }>(),
     { color: 'blue' },
 )
@@ -14,6 +15,7 @@ const props = withDefaults(
 const baseClasses = computed(() => [
   props.variant,
   `d-button--${props.color}`,
+  props.size && `d-button--${props.size}`,
 ])
 </script>
 
@@ -25,19 +27,18 @@ const baseClasses = computed(() => [
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: var(--size-12);
   height: 44px;
-  border-radius: 12px;
+  border-radius: var(--size-12);
   background: @lightBlue;
   border: none;
-  color: @blue;
-  font-size: 18px;
-  font-weight: 450;
+  font-family: var(--font-futura);
+  font-size: var(--size-18);
   line-height: 100%;
   padding: 10px;
 
   @media (min-width: @bp-m-max) {
-    padding: 10px 24px
+    padding: 10px var(--size-24)
   }
 
   @media (hover: hover) {
@@ -67,6 +68,36 @@ const baseClasses = computed(() => [
 
   &--black {
     color: @black;
+  }
+
+  &--small {
+    height: 40px;
+    padding: 0 10px;
+    gap: 4px;
+    font-size: var(--size-16);
+
+    :deep(svg) {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+    }
+  }
+
+  &--medium {
+    height: 48px;
+    padding: 0 var(--size-12);
+    gap: 4px;
+
+    :deep(svg) {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+    }
+
+    @media (min-width: @bp-m-max) {
+      padding-left: var(--size-24);
+      padding-right: var(--size-24);
+    }
   }
 }
 </style>
