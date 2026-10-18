@@ -1,0 +1,16 @@
+@import (reference) './breakpoints.less';
+
+.content-wrapper {
+  width: 100%;
+  max-width: 1296px;
+  margin: 0 auto;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+@media (min-width: @bp-xl) {
+  .content-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
