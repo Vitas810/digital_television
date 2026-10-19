@@ -75,12 +75,14 @@ const { date, title, description } = toRefs(props)
   @media (min-width: @bp-m) {
     max-width: 276px;
     gap: var(--size-20);
+    padding: var(--size-32) var(--size-24);
   }
 
   & .card__top {
     display: flex;
     align-items: center;
     gap: var(--size-8);
+    font-family: var(--font-futura), sans-serif;
     font-size: var(--size-14);
     font-weight: 400;
     line-height: 100%;

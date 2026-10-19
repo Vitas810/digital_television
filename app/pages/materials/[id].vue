@@ -1,5 +1,5 @@
 <template>
-  <section class="material">
+  <section class="material content-wrapper__compact">
     <div
       v-if="pending"
       class="loading-wrapper"
@@ -79,9 +79,6 @@ const goBack = () => router.back()
 @import (reference) '@styles/breakpoints.less';
 
 .material {
-  max-width: 1014px;
-  margin: 0 auto;
-
   & .material__back {
     margin: var(--size-48) 0;
   }
@@ -90,6 +87,7 @@ const goBack = () => router.back()
     background: @white;
     border-radius: var(--size-32);
     padding: var(--size-16) var(--size-24);
+    margin-bottom: var(--size-32);
 
     @media (min-width: @bp-m) {
       padding: var(--size-64);

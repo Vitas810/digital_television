@@ -1,5 +1,5 @@
 <template>
-  <section class="create">
+  <section class="create content-wrapper__compact">
     <div
       v-if="submitError"
       class="create__error"
@@ -120,9 +120,6 @@ const submit = async () => {
 @import (reference) '@styles/breakpoints.less';
 
 .create {
-  max-width: 1014px;
-  margin: 0 auto;
-
   .create__back {
     margin-top: var(--size-48);
     margin-bottom: var(--size-32);

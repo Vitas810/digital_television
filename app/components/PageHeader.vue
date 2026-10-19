@@ -1,10 +1,10 @@
 <template>
   <header class="header">
-    <NuxtLink to="/">
-      <SvgoIcon
-        name="logo"
-        class="header__logo"
-      ></SvgoIcon>
+    <NuxtLink
+      to="/"
+      class="header__link"
+    >
+      <SvgoIcon name="logo"></SvgoIcon>
     </NuxtLink>
 
     <DButton
@@ -56,6 +56,10 @@ const handleButtonClick = () => {
 
   @media (min-width: @bp-m) {
     padding: var(--size-20) var(--size-16);
+  }
+
+  & .header__link {
+    height: var(--size-44);
   }
 
   & .header__btn-icon {

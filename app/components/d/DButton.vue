@@ -29,17 +29,17 @@ const baseClasses = computed(() => [props.variant, `d-button--${props.color}`, p
   align-items: center;
   justify-content: center;
   gap: var(--size-12);
-  height: 44px;
+  height: var(--size-44);
   border-radius: var(--size-12);
   background: @lightBlue;
   border: none;
   font-family: var(--font-futura), sans-serif;
   font-size: var(--size-18);
   line-height: 100%;
-  padding: 10px;
+  padding: var(--size-10) var(--size-24);
 
-  @media (min-width: @bp-m-max) {
-    padding: 10px var(--size-24);
+  @media (min-width: @bp-m) {
+    padding: var(--size-10);
   }
 
   @media (hover: hover) {
@@ -73,8 +73,8 @@ const baseClasses = computed(() => [props.variant, `d-button--${props.color}`, p
   }
 
   &--small {
-    height: 40px;
-    padding: 0 10px;
+    height: var(--size-40);
+    padding: 0 var(--size-10);
     gap: 4px;
     font-size: var(--size-16);
 
@@ -86,19 +86,18 @@ const baseClasses = computed(() => [props.variant, `d-button--${props.color}`, p
   }
 
   &--medium {
-    height: 48px;
+    height: var(--size-48);
     padding: 0 var(--size-12);
     gap: 4px;
 
     :deep(svg) {
-      width: 24px;
-      height: 24px;
-      flex: 0 0 24px;
+      width: var(--size-24);
+      height: var(--size-24);
+      flex: 0 0 var(--size-24);
     }
 
-    @media (min-width: @bp-m-max) {
-      padding-left: var(--size-24);
-      padding-right: var(--size-24);
+    @media (min-width: @bp-m) {
+      height: var(--size-44);
     }
   }
 }

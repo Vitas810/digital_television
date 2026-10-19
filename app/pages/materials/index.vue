@@ -63,7 +63,7 @@ const { data: materials, pending, error } = await useMaterials()
     grid-template-columns: repeat(auto-fill, minmax(276px, 1fr));
     grid-auto-rows: 236px;
     gap: var(--size-16);
-    margin-bottom: var(--size-16);
+    margin-bottom: var(--size-32);
 
     @media (min-width: @bp-m-max) {
       grid-template-columns: repeat(auto-fill, 276px);
