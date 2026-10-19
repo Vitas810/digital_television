@@ -86,7 +86,7 @@ watchEffect(() => {
 
 .material {
   & .material__back {
-    margin: var(--space-4xl) 0;
+    margin: var(--space-2xl) 0;
   }
 
   & .material__card {
