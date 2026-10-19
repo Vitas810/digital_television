@@ -72,6 +72,12 @@ const { data: materials, pending, error } = useMaterials()
 const material = computed(() => materials.value?.find((material) => String(material.id) === String(route.params.id)))
 
 const goBack = () => router.back()
+
+watchEffect(() => {
+  if (!pending.value && !error.value && materials.value && !material.value) {
+    showError(createError({ statusCode: 404, statusMessage: 'Страница не найдена' }))
+  }
+})
 </script>
 
 <style scoped lang="less">
