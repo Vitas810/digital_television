@@ -15,15 +15,13 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="less">
-@import (reference) '@styles/colors.less';
-
 .layout-wrapper {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
 
   & .page-content {
-    background-color: @grayBackground;
+    background-color: var(--color-gray-50);
     flex: 1;
   }
 }

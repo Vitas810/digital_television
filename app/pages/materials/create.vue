@@ -114,23 +114,22 @@ const submit = async () => {
 </script>
 
 <style scoped lang="less">
-@import (reference) '@styles/colors.less';
 @import (reference) '@styles/breakpoints.less';
 @import (reference) '@styles/fonts.less';
 
 .create {
   .create__back {
-    margin-top: var(--size-48);
-    margin-bottom: var(--size-32);
+    margin-top: var(--space-4xl);
+    margin-bottom: var(--space-2xl);
   }
 
   .create__title {
     .font-title-36-strong();
-    margin: 0 0 var(--size-24);
-    color: @black;
+    margin: 0 0 var(--space-xl);
+    color: var(--color-black);
 
     @media (min-width: @bp-m) {
-      margin-bottom: var(--size-32);
+      margin-bottom: var(--space-2xl);
     }
   }
 
@@ -138,40 +137,40 @@ const submit = async () => {
     display: flex;
     flex-direction: column;
     min-height: 420px;
-    padding: var(--size-16) var(--size-20);
-    border-radius: var(--size-32);
-    background: @white;
+    padding: var(--space-m) var(--space-l);
+    border-radius: var(--space-2xl);
+    background: var(--color-white);
     box-sizing: border-box;
 
     @media (min-width: @bp-m) {
-      padding: var(--size-24) var(--size-48) var(--size-24) var(--size-106);
+      padding: var(--space-xl) var(--space-4xl) var(--space-xl) 106px;
     }
   }
 
   .create__datetime {
     width: max-content;
-    margin-bottom: var(--size-24);
+    margin-bottom: var(--space-xl);
 
     .dp__input:focus {
-      border-color: @black;
+      border-color: var(--color-black);
     }
   }
 
   .create__title-form {
     .font-title-36-strong();
-    margin-bottom: var(--size-12);
+    margin-bottom: var(--space-s);
 
     @media (min-width: @bp-m) {
-      margin-bottom: var(--size-24);
+      margin-bottom: var(--space-xl);
     }
   }
 
   .create__description {
     .font-body-22();
-    margin-bottom: var(--size-24);
+    margin-bottom: var(--space-xl);
 
     @media (min-width: @bp-m) {
-      margin-bottom: var(--size-40);
+      margin-bottom: var(--space-3xl);
     }
   }
 
@@ -181,12 +180,12 @@ const submit = async () => {
   }
 
   .icon {
-    width: var(--size-20);
-    height: var(--size-20);
+    width: 20px;
+    height: 20px;
 
     @media (min-width: @bp-m) {
-      width: var(--size-24);
-      height: var(--size-24);
+      width: 24px;
+      height: 24px;
     }
   }
 }

@@ -45,17 +45,16 @@ const { date, title, description } = toRefs(props)
 </script>
 
 <style scoped lang="less">
-@import (reference) '@styles/colors.less';
 @import (reference) '@styles/breakpoints.less';
 
 .card {
   display: flex;
   flex-direction: column;
-  gap: var(--size-16);
-  padding: var(--size-24);
-  background-color: @white;
+  gap: var(--font-size-s);
+  padding: var(--font-size-2xl);
+  background-color: var(--color-white);
   width: 100%;
-  border-radius: var(--size-24);
+  border-radius: var(--radius-3xl);
   font-family: var(--font-futura), sans-serif;
   box-sizing: border-box;
   text-decoration: none;
@@ -63,40 +62,35 @@ const { date, title, description } = toRefs(props)
   @media (hover: hover) {
     &:hover {
       cursor: pointer;
-      box-shadow:
-        -2px 5px 13px 0 #0000000a,
-        -9px 21px 23px 0 #0000000a,
-        -21px 48px 31px 0 #00000005,
-        -37px 85px 37px 0 #00000003,
-        -57px 133px 40px 0 #00000000;
+      box-shadow: var(--shadow-card-hover);
     }
   }
 
   @media (min-width: @bp-m) {
     max-width: 276px;
-    gap: var(--size-20);
-    padding: var(--size-32) var(--size-24);
+    gap: var(--space-l);
+    padding: var(--space-2xl) var(--space-xl);
   }
 
   & .card__top {
     display: flex;
     align-items: center;
-    gap: var(--size-8);
+    gap: var(--space-xs);
     font-family: var(--font-futura), sans-serif;
-    font-size: var(--size-14);
+    font-size: var(--font-size-xs);
     font-weight: 400;
     line-height: 100%;
     letter-spacing: 0;
-    color: @lightGray;
+    color: var(--color-gray-300);
 
     & .icon {
       width: 16px;
       height: 16px;
-      color: @lightGray;
+      color: var(--color-gray-300);
     }
 
     @media (min-width: @bp-m) {
-      font-size: var(--size-16);
+      font-size: var(--font-size-s);
 
       & .icon {
         width: 20px;
@@ -108,21 +102,21 @@ const { date, title, description } = toRefs(props)
   & .card__title {
     font-family: var(--font-source-sans), sans-serif;
     font-weight: 600;
-    font-size: var(--size-18);
+    font-size: var(--font-size-m);
     line-height: 120%;
-    color: @black;
+    color: var(--color-black);
     margin: 0;
 
     @media (min-width: @bp-m) {
-      font-size: var(--size-20);
+      font-size: var(--font-size-l);
     }
   }
 
   & .card__description {
     font-family: var(--font-futura), sans-serif;
-    font-size: var(--size-14);
-    line-height: var(--size-18);
-    color: @gray;
+    font-size: var(--font-size-xs);
+    line-height: var(--font-size-m);
+    color: var(--color-gray-500);
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
@@ -130,7 +124,7 @@ const { date, title, description } = toRefs(props)
     margin: 0;
 
     @media (min-width: @bp-m) {
-      font-size: var(--size-16);
+      font-size: var(--font-size-s);
       line-height: 120%;
     }
   }

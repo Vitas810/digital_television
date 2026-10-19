@@ -41,18 +41,17 @@ const { data: materials, pending, error } = await useMaterials()
 
 <style lang="less">
 @import (reference) '@styles/breakpoints.less';
-@import (reference) '@styles/colors.less';
 @import (reference) '@styles/fonts.less';
 
 .materials {
   .materials__title {
     .font-title-36-strong();
     font-weight: 600;
-    padding: var(--size-32) 0;
+    padding: var(--space-2xl) 0;
     margin: 0;
 
     @media (min-width: @bp-m) {
-      padding: var(--size-48) 0;
+      padding: var(--space-4xl) 0;
     }
   }
 
@@ -60,13 +59,13 @@ const { data: materials, pending, error } = await useMaterials()
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(276px, 1fr));
     grid-auto-rows: 236px;
-    gap: var(--size-16);
-    margin-bottom: var(--size-32);
+    gap: var(--space-m);
+    margin-bottom: var(--space-m);
 
     @media (min-width: @bp-m) {
       grid-template-columns: repeat(auto-fill, 276px);
       grid-auto-rows: 273px;
-      gap: var(--size-40);
+      gap: var(--space-3xl);
     }
   }
 
@@ -75,8 +74,8 @@ const { data: materials, pending, error } = await useMaterials()
     justify-content: center;
     align-items: center;
     min-height: calc(90vh - 88px);
-    padding-top: var(--size-16);
-    color: @black;
+    padding-top: var(--space-m);
+    color: var(--color-black);
   }
 }
 </style>

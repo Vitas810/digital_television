@@ -1,35 +1,52 @@
 :root {
   /* Цвета */
-  --blue: #00b2ff;
-  --black: #14142a;
-  --white: #ffffff;
-  --gray: #81859c;
-  --light-gray: #bec2da;
-  --light-blue: #e7f8fe;
-  --button-hover: #d2f3ff;
-  --gray-background: #f4f6fb;
+  --color-blue-500: var(--token-blue-500);
+  --color-blue-200: var(--token-blue-200);
+  --color-blue-100: var(--token-blue-100);
+
+  --color-black: var(--token-black);
+
+  --color-gray-500: var(--token-gray-500);
+  --color-gray-300: var(--token-gray-300);
+  --color-gray-50: var(--token-gray-50);
+
+  --color-white: var(--token-white);
 
   /* Шрифты */
-  --font-source-sans: 'Source Sans 3', Arial, sans-serif;
-  --font-futura: 'Futura PT', sans-serif;
+  --font-futura: var(--token-font-futura);
+  --font-source-sans: var(--token-font-source-sans);
 
-  /* Отступы, текст, радиусы */
-  --size-4: 4px;
-  --size-8: 8px;
-  --size-10: 10px;
-  --size-12: 12px;
-  --size-14: 14px;
-  --size-16: 16px;
-  --size-18: 18px;
-  --size-20: 20px;
-  --size-22: 22px;
-  --size-24: 24px;
-  --size-32: 32px;
-  --size-36: 36px;
-  --size-38: 38px;
-  --size-40: 40px;
-  --size-44: 44px;
-  --size-48: 48px;
-  --size-64: 64px;
-  --size-106: 106px;
+  /* Шкала размеров текста */
+  --font-size-2xs: var(--token-size-12);
+  --font-size-xs: var(--token-size-14);
+  --font-size-s: var(--token-size-16);
+  --font-size-m: var(--token-size-18);
+  --font-size-l: var(--token-size-20);
+  --font-size-xl: var(--token-size-22);
+  --font-size-2xl: var(--token-size-24);
+  --font-size-3xl: var(--token-size-36);
+
+  /* Отступы */
+  --space-xxs: var(--token-size-4);
+  --space-xs: var(--token-size-8);
+  --space-s: var(--token-size-12);
+  --space-m: var(--token-size-16);
+  --space-l: var(--token-size-20);
+  --space-xl: var(--token-size-24);
+  --space-2xl: var(--token-size-32);
+  --space-3xl: var(--token-size-40);
+  --space-4xl: var(--token-size-48);
+  --space-5xl: var(--token-size-64);
+
+  /* Скругления */
+  --radius-xs: var(--token-size-4);
+  --radius-s: var(--token-size-8);
+  --radius-l: var(--token-size-12);
+  --radius-xl: var(--token-size-16);
+  --radius-2xl: var(--token-size-20);
+  --radius-3xl: var(--token-size-24);
+  --radius-4xl: var(--token-size-32);
+
+  /* Тени */
+  --shadow-card-hover: var(--token-shadow-card-hover);
 }

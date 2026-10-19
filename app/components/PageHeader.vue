@@ -52,19 +52,19 @@ const handleButtonClick = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--size-8) var(--size-36);
+  padding: var(--space-xs) var(--space-2xl);
 
   @media (min-width: @bp-m) {
-    padding: var(--size-20) var(--size-16);
+    padding: var(--space-l) var(--space-m);
   }
 
   & .header__link {
-    height: var(--size-44);
+    height: 44px;
   }
 
   & .header__btn-icon {
-    width: var(--size-24);
-    height: var(--size-24);
+    width: 24px;
+    height: 24px;
     display: none;
 
     @media (max-width: @bp-xs-max) {

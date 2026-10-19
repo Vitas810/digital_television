@@ -174,7 +174,6 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped lang="less">
-@import (reference) '@styles/colors.less';
 @import (reference) '@styles/breakpoints.less';
 @import (reference) '@styles/fonts.less';
 
@@ -186,7 +185,7 @@ onBeforeUnmount(() => {
   .editor__actions {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: var(--space-xxs);
     position: relative;
   }
 
@@ -199,20 +198,20 @@ onBeforeUnmount(() => {
     height: 22px;
     padding: 0;
     border: 0;
-    border-radius: var(--size-8);
-    background: #f3f4f8;
-    color: @black;
+    border-radius: var(--radius-s);
+    background: var(--color-gray-50);
+    color: var(--color-black);
   }
 
   .editor__add {
-    font-size: 20px;
+    font-size: var(--font-size-l);
     line-height: 1;
     cursor: pointer;
   }
 
   .editor__add:hover,
   .editor__drag:hover {
-    background: @lightBlue;
+    background: var(--color-blue-100);
   }
 
   .editor__drag {
@@ -230,31 +229,31 @@ onBeforeUnmount(() => {
     top: 28px;
     left: 0;
     display: grid;
-    gap: 2px;
+    gap: var(--space-xxs);
     width: 136px;
-    padding: var(--size-8);
-    border-radius: var(--size-8);
-    background: @white;
+    padding: var(--space-xs);
+    border-radius: var(--radius-s);
+    background: var(--color-white);
     box-shadow: 0 4px 20px rgb(0 0 0 / 12%);
   }
 
   .editor__menu button {
     display: flex;
     align-items: center;
-    gap: var(--size-8);
-    padding: 6px 4px;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-xxs);
     border: 0;
-    border-radius: 4px;
+    border-radius: var(--radius-xs);
     background: transparent;
-    color: @black;
+    color: var(--color-black);
     font-family: var(--font-futura), sans-serif;
-    font-size: 12px;
+    font-size: var(--font-size-2xs);
     text-align: left;
     cursor: pointer;
   }
 
   .editor__menu button:hover {
-    background: #f3f4f8;
+    background: var(--color-blue-100);
   }
 
   .editor__menu-icon {
@@ -264,9 +263,9 @@ onBeforeUnmount(() => {
     width: 16px;
     min-width: 16px;
     height: 16px;
-    border: 1px solid #e1e4ed;
-    border-radius: 3px;
-    font-size: 10px;
+    border: 1px solid var(--color-blue-100);
+    border-radius: var(--radius-xs);
+    font-size: var(--font-size-2xs);
   }
 }
 
@@ -276,12 +275,12 @@ onBeforeUnmount(() => {
     padding: 0;
     outline: none;
     font-family: var(--font-futura), sans-serif;
-    font-size: var(--size-16);
+    font-size: var(--font-size-s);
     line-height: 140%;
-    color: @lightGray;
+    color: var(--color-gray-300);
 
     @media (min-width: @bp-m) {
-      font-size: var(--size-20);
+      font-size: var(--font-size-l);
     }
   }
 
@@ -294,61 +293,61 @@ onBeforeUnmount(() => {
   }
 
   & :deep(.editor__prose p) {
-    margin: 0 0 var(--size-16);
-    color: @black;
+    margin: 0 0 var(--font-size-s);
+    color: var(--color-black);
   }
 
   & :deep(.editor__prose p.is-editor-empty:first-child::before) {
     content: attr(data-placeholder);
     float: left;
     height: 0;
-    color: #b8c2df;
+    color: var(--color-gray-300);
     pointer-events: none;
   }
 
   & :deep(.editor__prose h1) {
-    margin: 0 0 var(--size-16);
+    margin: 0 0 var(--font-size-s);
     font-family: var(--font-source-sans), sans-serif;
-    font-size: var(--size-36);
+    font-size: var(--font-size-3xl);
     font-weight: 600;
     line-height: 120%;
   }
 
   & :deep(.editor__prose h2) {
-    margin: var(--size-24) 0 var(--size-16);
+    margin: var(--space-xl) 0 var(--space-m);
     font-family: var(--font-source-sans), sans-serif;
-    font-size: var(--size-28);
+    font-size: var(--font-size-xl);
     font-weight: 600;
     line-height: 120%;
   }
 
   & :deep(.editor__prose h3) {
-    margin: var(--size-24) 0 var(--size-16);
+    margin: var(--space-xl) 0 var(--space-m);
     .font-title-22();
   }
 
   & :deep(.editor__prose blockquote) {
-    margin: var(--size-16) 0;
-    padding-left: var(--size-16);
-    border-left: 3px solid @lightGray;
+    margin: var(--space-m) 0;
+    padding-left: var(--space-m);
+    border-left: 3px solid var(--color-gray-300);
   }
 
   & :deep(.editor__prose ul) {
-    padding-left: var(--size-24);
+    padding-left: var(--font-size-2xl);
     list-style: disc;
   }
 
   & :deep(.editor__prose ol) {
-    padding-left: var(--size-24);
+    padding-left: var(--font-size-2xl);
     list-style: decimal;
   }
 
   & :deep(.editor__prose pre) {
     overflow-x: auto;
-    padding: var(--size-16);
-    border-radius: var(--size-8);
-    background: #f3f4f8;
-    font-size: var(--size-16);
+    padding: var(--font-size-s);
+    border-radius: var(--radius-s);
+    background: var(--color-gray-50);
+    font-size: var(--font-size-s);
   }
 }
 </style>

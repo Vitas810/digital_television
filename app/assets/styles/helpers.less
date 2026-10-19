@@ -1,4 +1,4 @@
-@import (reference) 'colors.less';
+@import (reference) 'variables.less';
 
 .loading-wrapper {
   min-height: calc(90vh - 88px);
@@ -11,7 +11,7 @@
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 3px solid @blue;
+  border: 3px solid var(--color-blue-500);
   border-top-color: transparent;
   border-radius: 50%;
   animation: hls-spin 0.8s linear infinite;

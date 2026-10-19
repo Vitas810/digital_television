@@ -16,27 +16,26 @@ const currentYear = new Date().getFullYear()
 
 <style scoped lang="less">
 @import (reference) '@styles/breakpoints.less';
-@import (reference) '@styles/colors.less';
 
 .footer {
   flex-shrink: 0;
   margin-top: auto;
-  background: @black;
+  background: var(--color-black);
 
   & .footer__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--size-16) var(--size-36);
+    padding: var(--space-m) var(--space-2xl);
 
     @media (min-width: @bp-m) {
-      padding: var(--size-8) var(--size-16);
+      padding: var(--space-xs) var(--space-m);
     }
   }
 
   & .footer__copyright {
-    color: @lightGray;
-    font-size: var(--size-14);
+    color: var(--color-gray-300);
+    font-size: var(--font-size-xs);
     line-height: 1.4;
   }
 }

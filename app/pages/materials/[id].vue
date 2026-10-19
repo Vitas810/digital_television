@@ -81,76 +81,75 @@ watchEffect(() => {
 </script>
 
 <style scoped lang="less">
-@import (reference) '@styles/colors.less';
 @import (reference) '@styles/breakpoints.less';
 @import (reference) '@styles/fonts.less';
 
 .material {
   & .material__back {
-    margin: var(--size-48) 0;
+    margin: var(--space-4xl) 0;
   }
 
   & .material__card {
-    background: @white;
-    border-radius: var(--size-32);
-    padding: var(--size-16) var(--size-24);
-    margin-bottom: var(--size-32);
+    background: var(--color-white);
+    border-radius: var(--radius-4xl);
+    padding: var(--space-m) var(--space-xl);
+    margin-bottom: var(--space-2xl);
 
     @media (min-width: @bp-m) {
-      padding: var(--size-64);
+      padding: var(--space-5xl);
     }
   }
 
   & .material__card-date {
     display: flex;
     align-items: center;
-    gap: var(--size-12);
+    gap: var(--space-s);
     font-family: var(--font-futura), sans-serif;
-    color: @lightGray;
-    font-size: var(--size-18);
+    color: var(--color-gray-300);
+    font-size: var(--font-size-m);
     line-height: 120%;
-    margin-bottom: var(--size-24);
+    margin-bottom: var(--space-xl);
 
     @media (min-width: @bp-m) {
-      font-size: var(--size-20);
+      font-size: var(--space-l);
       line-height: 140%;
     }
   }
 
   & .material__card-title {
     .font-title-36-strong();
-    color: @black;
-    margin-bottom: var(--size-24);
+    color: var(--color-black);
+    margin-bottom: var(--space-xl);
   }
 
   & .material__card-short-description {
     .font-body-22();
-    color: @black;
-    margin-bottom: var(--size-24);
+    color: var(--color-black);
+    margin-bottom: var(--space-xl);
 
     @media (min-width: @bp-m) {
-      margin-bottom: var(--size-38);
+      margin-bottom: var(--space-3xl);
     }
   }
 
   & .material__card-description {
     font-family: var(--font-futura), sans-serif;
-    font-size: var(--size-16);
+    font-size: var(--space-m);
     line-height: 140%;
-    color: @black;
+    color: var(--color-black);
 
     @media (min-width: @bp-m) {
-      font-size: var(--size-20);
+      font-size: var(--font-size-l);
     }
   }
 
   & .icon {
-    width: var(--size-20);
-    height: var(--size-20);
+    width: 20px;
+    height: 20px;
 
     @media (min-width: @bp-m) {
-      width: var(--size-24);
-      height: var(--size-24);
+      width: 24px;
+      height: 24px;
     }
   }
 
@@ -159,8 +158,8 @@ watchEffect(() => {
     justify-content: center;
     align-items: center;
     min-height: calc(90vh - 88px);
-    padding-top: var(--size-16);
-    color: @black;
+    padding-top: var(--space-m);
+    color: var(--color-black);
   }
 }
 </style>

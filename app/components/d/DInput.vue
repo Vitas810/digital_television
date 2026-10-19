@@ -35,8 +35,6 @@ const model = defineModel<string>({ default: '' })
 </script>
 
 <style lang="less">
-@import (reference) '@styles/colors.less';
-
 .d-input {
   display: block;
   width: 100%;
@@ -44,11 +42,11 @@ const model = defineModel<string>({ default: '' })
   border: 0;
   outline: none;
   background: transparent;
-  color: @black;
+  color: var(--color-black);
   box-sizing: border-box;
 
   &::placeholder {
-    color: @lightGray;
+    color: var(--color-gray-300);
     opacity: 1;
   }
 

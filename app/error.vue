@@ -24,7 +24,6 @@ const goHome = () => clearError({ redirect: '/' })
 </script>
 
 <style scoped lang="less">
-@import (reference) '@styles/colors.less';
 @import (reference) '@styles/breakpoints.less';
 
 .not-found {
@@ -32,10 +31,10 @@ const goHome = () => clearError({ redirect: '/' })
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: var(--size-16);
+  gap: var(--font-size-s);
   min-height: calc(90vh - 88px);
-  padding-top: var(--size-16);
-  color: @black;
+  padding-top: var(--space-m);
+  color: var(--color-black);
   text-align: center;
 
   .not-found__code {
@@ -43,7 +42,7 @@ const goHome = () => clearError({ redirect: '/' })
     font-size: 96px;
     line-height: 100%;
     font-weight: 600;
-    color: @lightGray;
+    color: var(--color-gray-300);
 
     @media (min-width: @bp-m) {
       font-size: 160px;
@@ -51,18 +50,18 @@ const goHome = () => clearError({ redirect: '/' })
   }
 
   .not-found__text {
-    margin: 0 0 var(--size-16);
+    margin: 0 0 var(--space-m);
     font-family: var(--font-futura), sans-serif;
-    font-size: var(--size-20);
+    font-size: var(--font-size-l);
     line-height: 120%;
 
     @media (min-width: @bp-m) {
-      font-size: var(--size-24);
+      font-size: var(--font-size-2xl);
     }
   }
 
   .not-found__button {
-    padding: 0 var(--size-24);
+    padding: 0 var(--space-xl);
   }
 }
 </style>

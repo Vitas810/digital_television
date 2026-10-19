@@ -21,36 +21,35 @@ const baseClasses = computed(() => [props.variant, `d-button--${props.color}`, p
 </script>
 
 <style lang="less">
-@import (reference) '@styles/colors.less';
 @import (reference) '@styles/breakpoints.less';
 
 .d-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--size-12);
-  height: var(--size-44);
-  border-radius: var(--size-12);
-  background: @lightBlue;
+  gap: var(--space-s);
+  height: 44px;
+  border-radius: var(--radius-l);
+  background: var(--color-blue-100);
   border: none;
   font-family: var(--font-futura), sans-serif;
-  font-size: var(--size-18);
+  font-size: var(--font-size-m);
   line-height: 100%;
-  padding: var(--size-10) var(--size-24);
+  padding: var(--space-s) var(--space-xl);
 
   @media (min-width: @bp-m) {
-    padding: var(--size-10);
+    padding: var(--space-s);
   }
 
   @media (hover: hover) {
     &:hover {
-      background: @btnHover;
+      background: var(--color-blue-200);
       cursor: pointer;
     }
   }
 
   &:active {
-    background: @btnHover;
+    background: var(--color-blue-200);
     cursor: pointer;
   }
 
@@ -65,18 +64,18 @@ const baseClasses = computed(() => [props.variant, `d-button--${props.color}`, p
   }
 
   &--blue {
-    color: @blue;
+    color: var(--color-blue-500);
   }
 
   &--black {
-    color: @black;
+    color: var(--color-black);
   }
 
   &--small {
-    height: var(--size-40);
-    padding: 0 var(--size-10);
-    gap: 4px;
-    font-size: var(--size-16);
+    height: 40px;
+    padding: 0 var(--space-s);
+    gap: var(--space-xxs);
+    font-size: var(--font-size-s);
 
     :deep(svg) {
       width: 20px;
@@ -86,18 +85,18 @@ const baseClasses = computed(() => [props.variant, `d-button--${props.color}`, p
   }
 
   &--medium {
-    height: var(--size-48);
-    padding: 0 var(--size-12);
-    gap: 4px;
+    height: 48px;
+    padding: 0 var(--space-s);
+    gap: var(--space-xxs);
 
     :deep(svg) {
-      width: var(--size-24);
-      height: var(--size-24);
-      flex: 0 0 var(--size-24);
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
     }
 
     @media (min-width: @bp-m) {
-      height: var(--size-44);
+      height: 44px;
     }
   }
 }
