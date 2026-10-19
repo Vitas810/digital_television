@@ -1,75 +1,63 @@
-# Nuxt Minimal Starter
+## Установка и запуск
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install dependencies:
+1. Установите зависимости:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+2. Запустите dev-сервер (по умолчанию `http://localhost:3000`):
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
+3. Сборка для продакшена и локальный предпросмотр:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Получение данных для детальной страницы
+
+Из трёх вариантов (получить список и найти элемент по параметру роута, передать через пропсы, передать через стор)
+выбран **первый**, список материалов загружается через `useMaterials()`, а нужный элемент ищется в нём по
+`route.params.id`
+
+Почему так:
+
+- **Прямые ссылки работают.** При переходе на `/materials/:id` напрямую пропсов или состояния стора нет, а
+  `route.params.id` есть всегда
+- **Нет лишних запросов.** Запрос кешируется, поэтому при переходе со списка на детальную страницу данные не
+  запрашиваются повторно
+- **Нет дополнительной связности.** Не нужно синхронизировать данные между страницами и поддерживать отдельное хранилище
+
+## Проверка длины полей `title` и `short_description`
+
+Ограничения длины заданы нативным HTML атрибутом `maxlength`. Компоненты `DInput` и `DTextarea` принимают проп
+`maxlength` и передают его напрямую в `<input>` и `<textarea>`, поэтому проверку выполняет сам браузер, без
+дополнительного JS, думаю в данной реализации нет смысла тянуть отдельную библиотеку или прикручивать js для валидации
+
+## CORS
+
+Проблема CORS решена через серверные запросы, браузер обращается не напрямую к внешнему API, а к серверным маршрутам
+Nuxt (Nitro), которые сами делают запрос к API через `$fetch`. Ограничения CORS действуют только для запросов из
+браузера, поэтому между сервером Nuxt и внешним API они не применяются
+
+Пример серверного обработчика получения списка:
+
+```ts
+export default defineEventHandler(async (): Promise<Material[]> => {
+    try {
+        return await $fetch<Material[]>(materialsApiUrl)
+    } catch {
+        throw createError({
+            statusCode: 502,
+            statusMessage: 'Не удалось загрузить материалы',
+        })
+    }
+})
+```
+
+При ошибке внешнего API клиент получает статус `502` с понятным сообщением.
