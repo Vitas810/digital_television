@@ -83,6 +83,7 @@ watchEffect(() => {
 <style scoped lang="less">
 @import (reference) '@styles/colors.less';
 @import (reference) '@styles/breakpoints.less';
+@import (reference) '@styles/fonts.less';
 
 .material {
   & .material__back {
@@ -117,28 +118,17 @@ watchEffect(() => {
   }
 
   & .material__card-title {
-    font-family: var(--font-source-sans), sans-serif;
-    font-size: var(--size-24);
-    line-height: 120%;
-    font-weight: 600;
+    .font-title-36-strong();
     color: @black;
     margin-bottom: var(--size-24);
-
-    @media (min-width: @bp-m) {
-      font-size: var(--size-36);
-    }
   }
 
   & .material__card-short-description {
-    font-family: var(--font-futura), sans-serif;
-    font-size: var(--size-18);
-    line-height: 120%;
-    font-weight: 500;
+    .font-body-22();
     color: @black;
     margin-bottom: var(--size-24);
 
     @media (min-width: @bp-m) {
-      font-size: var(--size-22);
       margin-bottom: var(--size-38);
     }
   }

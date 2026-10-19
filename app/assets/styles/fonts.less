@@ -1,3 +1,5 @@
+@import (reference) './breakpoints.less';
+
 body {
   font-family: var(--font-source-sans), sans-serif;
   font-weight: 400;
@@ -106,4 +108,36 @@ body {
   font-weight: 800;
   font-display: swap;
   src: url('../font/FuturaPT/FuturaPTCond-ExtraBold.ttf') format('truetype');
+}
+
+.font-title-36-strong {
+  font-family: var(--font-source-sans), sans-serif;
+  font-size: var(--size-24);
+  line-height: 120%;
+  font-weight: 600;
+
+  @media (min-width: @bp-m) {
+    font-size: var(--size-36);
+  }
+}
+
+.font-title-22 {
+  font-family: var(--font-source-sans), sans-serif;
+  font-size: var(--size-18);
+  line-height: 120%;
+  font-weight: 600;
+
+  @media (min-width: @bp-m) {
+    font-size: var(--size-22);
+  }
+}
+
+.font-body-22 {
+  font-family: var(--font-source-sans), sans-serif;
+  font-size: var(--size-18);
+  line-height: 120%;
+
+  @media (min-width: @bp-m) {
+    font-size: var(--size-22);
+  }
 }

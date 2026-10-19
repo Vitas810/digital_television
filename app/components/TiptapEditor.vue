@@ -154,6 +154,7 @@ const dragHandleConfig = computed(
 <style scoped lang="less">
 @import (reference) '@styles/colors.less';
 @import (reference) '@styles/breakpoints.less';
+@import (reference) '@styles/fonts.less';
 
 .editor {
   position: relative;
@@ -301,10 +302,7 @@ const dragHandleConfig = computed(
 
   & :deep(.editor__prose h3) {
     margin: var(--size-24) 0 var(--size-16);
-    font-family: var(--font-source-sans), sans-serif;
-    font-size: var(--size-22);
-    font-weight: 600;
-    line-height: 120%;
+    .font-title-22();
   }
 
   & :deep(.editor__prose blockquote) {

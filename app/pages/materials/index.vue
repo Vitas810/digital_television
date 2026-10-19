@@ -42,18 +42,16 @@ const { data: materials, pending, error } = await useMaterials()
 <style lang="less">
 @import (reference) '@styles/breakpoints.less';
 @import (reference) '@styles/colors.less';
+@import (reference) '@styles/fonts.less';
 
 .materials {
   .materials__title {
-    font-size: var(--size-24);
-    line-height: 120%;
-    font-family: var(--font-source-sans), sans-serif;
+    .font-title-36-strong();
     font-weight: 600;
     padding: var(--size-32) 0;
     margin: 0;
 
     @media (min-width: @bp-m-max) {
-      font-size: var(--size-36);
       padding: var(--size-48) 0;
     }
   }
@@ -65,10 +63,11 @@ const { data: materials, pending, error } = await useMaterials()
     gap: var(--size-16);
     margin-bottom: var(--size-32);
 
-    @media (min-width: @bp-m-max) {
+    @media (min-width: @bp-s) {
       grid-template-columns: repeat(auto-fill, 276px);
       grid-auto-rows: 273px;
       gap: var(--size-40);
+      justify-content: center;
     }
   }
 

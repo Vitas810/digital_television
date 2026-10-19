@@ -118,6 +118,7 @@ const submit = async () => {
 <style scoped lang="less">
 @import (reference) '@styles/colors.less';
 @import (reference) '@styles/breakpoints.less';
+@import (reference) '@styles/fonts.less';
 
 .create {
   .create__back {
@@ -126,16 +127,12 @@ const submit = async () => {
   }
 
   .create__title {
+    .font-title-36-strong();
     margin: 0 0 var(--size-24);
-    font-family: var(--font-source-sans), sans-serif;
-    font-size: var(--size-24);
-    line-height: 120%;
-    font-weight: 600;
     color: @black;
 
     @media (min-width: @bp-m) {
       margin-bottom: var(--size-32);
-      font-size: var(--size-36);
     }
   }
 
@@ -163,26 +160,19 @@ const submit = async () => {
   }
 
   .create__title-form {
-    font-family: var(--font-source-sans), sans-serif;
-    font-size: var(--size-24);
-    line-height: 120%;
-    font-weight: 600;
+    .font-title-36-strong();
     margin-bottom: var(--size-12);
 
     @media (min-width: @bp-m) {
-      font-size: var(--size-36);
       margin-bottom: var(--size-24);
     }
   }
 
   .create__description {
-    font-family: var(--font-futura), sans-serif;
-    font-size: var(--size-18);
-    line-height: 120%;
+    .font-body-22();
     margin-bottom: var(--size-24);
 
     @media (min-width: @bp-m) {
-      font-size: var(--size-22);
       margin-bottom: var(--size-40);
     }
   }
