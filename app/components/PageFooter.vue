@@ -27,10 +27,10 @@ const currentYear = new Date().getFullYear()
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--size-8) var(--size-16);
+    padding: var(--size-16) var(--size-36);
 
-    @media (min-width: @bp-m-max) {
-      padding: var(--size-16) var(--size-36);
+    @media (min-width: @bp-m) {
+      padding: var(--size-8) var(--size-16);
     }
   }
 

@@ -51,7 +51,7 @@ const { data: materials, pending, error } = await useMaterials()
     padding: var(--size-32) 0;
     margin: 0;
 
-    @media (min-width: @bp-m-max) {
+    @media (min-width: @bp-m) {
       padding: var(--size-48) 0;
     }
   }
@@ -63,11 +63,10 @@ const { data: materials, pending, error } = await useMaterials()
     gap: var(--size-16);
     margin-bottom: var(--size-32);
 
-    @media (min-width: @bp-s) {
+    @media (min-width: @bp-m) {
       grid-template-columns: repeat(auto-fill, 276px);
       grid-auto-rows: 273px;
       gap: var(--size-40);
-      justify-content: center;
     }
   }
 

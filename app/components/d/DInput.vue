@@ -1,7 +1,7 @@
 <template>
   <input
     v-model="model"
-    class="input"
+    class="d-input"
     :type="type"
     :placeholder="placeholder"
     :maxlength="maxlength"
@@ -37,7 +37,7 @@ const model = defineModel<string>({ default: '' })
 <style lang="less">
 @import (reference) '@styles/colors.less';
 
-.input {
+.d-input {
   display: block;
   width: 100%;
   padding: 0;

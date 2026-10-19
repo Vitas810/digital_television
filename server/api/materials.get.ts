@@ -1,5 +1,5 @@
 import type { Material } from '~/types/materials.ts'
-import { materialsApiUrl } from '~/constans/api.ts'
+import { materialsApiUrl } from '~/constants/api.ts'
 
 export default defineEventHandler(async (): Promise<Material[]> => {
   try {

@@ -149,6 +149,28 @@ const dragHandleConfig = computed(
       strategy: 'absolute',
     }) as const,
 )
+
+const onKey = (e: KeyboardEvent) => {
+  if (e.key === 'Escape') {
+    isMenuOpen.value = false
+  }
+}
+
+const onDoc = (e: MouseEvent) => {
+  if (!(e.target as HTMLElement).closest('.editor__actions')) {
+    isMenuOpen.value = false
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('keydown', onKey)
+  document.addEventListener('click', onDoc)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('keydown', onKey)
+  document.removeEventListener('click', onDoc)
+})
 </script>
 
 <style scoped lang="less">

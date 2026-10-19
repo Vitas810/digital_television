@@ -1,7 +1,7 @@
 <template>
   <textarea
     v-model="model"
-    class="textarea"
+    class="d-textarea"
     :placeholder="placeholder"
     :maxlength="maxlength"
     :rows="rows"
@@ -37,7 +37,7 @@ const model = defineModel<string>({ default: '' })
 <style scoped lang="less">
 @import (reference) '@styles/colors.less';
 
-.textarea {
+.d-textarea {
   display: block;
   field-sizing: content;
   overflow: hidden;

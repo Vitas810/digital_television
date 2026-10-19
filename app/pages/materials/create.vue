@@ -1,73 +1,70 @@
 <template>
   <section class="create content-wrapper__compact">
-    <div
-      v-if="submitError"
-      class="create__error"
+    <DButton
+      variant="ghost"
+      color="black"
+      class="create__back"
+      @click="goBack"
     >
-      {{ submitError }}
-    </div>
+      <SvgoIcon
+        name="arrowSquareLeft"
+        class="icon"
+      />
+      Назад
+    </DButton>
 
-    <template v-else>
-      <DButton
-        variant="ghost"
-        color="black"
-        class="create__back"
-        @click="goBack"
-      >
-        <SvgoIcon
-          name="arrowSquareLeft"
-          class="icon"
-        />
-        Назад
-      </DButton>
+    <h1 class="create__error">Создание материала</h1>
 
-      <h1 class="create__title">Создание материала</h1>
-
-      <form
-        id="material-form"
-        class="create__form"
-        @submit.prevent="submit"
-      >
-        <div class="create__datetime">
-          <VueDatePicker
-            v-model="form.datetime"
-            :locale="ru"
-            format="dd.MM.yyyy HH:mm"
-            :enable-time-picker="true"
-            :is-24="true"
-            auto-apply
-            :clearable="false"
-            required
-          />
-        </div>
-
-        <DInput
-          class="create__title-form"
-          v-model.trim="form.title"
+    <form
+      id="material-form"
+      class="create__form"
+      @submit.prevent="submit"
+    >
+      <div class="create__datetime">
+        <VueDatePicker
+          v-model="form.datetime"
+          :locale="ru"
+          format="dd.MM.yyyy HH:mm"
+          :enable-time-picker="true"
+          :is-24="true"
+          auto-apply
+          :clearable="false"
           required
-          :maxlength="80"
-          placeholder="Введите заголовок"
-          aria-label="Заголовок"
         />
+      </div>
 
-        <DTextarea
-          v-model.trim="form.short_description"
-          required
-          :maxlength="255"
-          :rows="2"
-          placeholder="Введите краткое описание..."
-          aria-label="Краткое описание"
-          class="create__description"
+      <DInput
+        class="create__title-form"
+        v-model.trim="form.title"
+        required
+        :maxlength="80"
+        placeholder="Введите заголовок"
+        aria-label="Заголовок"
+      />
+
+      <DTextarea
+        v-model.trim="form.short_description"
+        required
+        :maxlength="255"
+        :rows="2"
+        placeholder="Введите краткое описание..."
+        aria-label="Краткое описание"
+        class="create__description"
+      />
+
+      <div class="create__editor">
+        <TiptapEditor
+          v-model="form.description_html"
+          @update:json="form.description_json = $event"
         />
+      </div>
+    </form>
 
-        <div class="create__editor">
-          <TiptapEditor
-            v-model="form.description_html"
-            @update:json="form.description_json = $event"
-          />
-        </div>
-      </form>
-    </template>
+    <Toast
+      v-if="submitError"
+      :message="submitError"
+      @close="submitError = ''"
+    />
   </section>
 </template>
 
@@ -107,8 +104,9 @@ const submit = async () => {
 
     const material = await createMaterial(payload)
     await router.push(`/materials/${material.id}`)
-  } catch {
-    submitError.value = 'Не удалось создать материал. Попробуйте ещё раз.'
+  } catch (e) {
+    submitError.value =
+      (e as { data?: { message?: string } }).data?.message ?? 'Не удалось создать материал. Попробуйте ещё раз.'
   } finally {
     isSubmitting.value = false
   }
@@ -180,20 +178,6 @@ const submit = async () => {
   .create__editor {
     flex: 1;
     min-height: 220px;
-  }
-
-  .create__submit {
-    width: 100%;
-    margin-top: auto;
-  }
-
-  .create__error {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(90vh - 90px);
-    padding-top: var(--size-16);
-    color: @black;
   }
 
   .icon {
