@@ -1,6 +1,5 @@
 import type { Material } from '~/types/materials.ts'
-
-const materialsApiUrl = 'https://naukatv.ru/api/test/materials/posypenko'
+import { materialsApiUrl } from '~/constans/api.ts'
 
 export default defineEventHandler(async (): Promise<Material[]> => {
   try {

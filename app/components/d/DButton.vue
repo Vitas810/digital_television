@@ -20,7 +20,7 @@ const props = withDefaults(
 const baseClasses = computed(() => [props.variant, `d-button--${props.color}`, props.size && `d-button--${props.size}`])
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 @import (reference) '@styles/colors.less';
 @import (reference) '@styles/breakpoints.less';
 
@@ -33,7 +33,7 @@ const baseClasses = computed(() => [props.variant, `d-button--${props.color}`, p
   border-radius: var(--size-12);
   background: @lightBlue;
   border: none;
-  font-family: var(--font-futura);
+  font-family: var(--font-futura), sans-serif;
   font-size: var(--size-18);
   line-height: 100%;
   padding: 10px;
@@ -54,7 +54,8 @@ const baseClasses = computed(() => [props.variant, `d-button--${props.color}`, p
     cursor: pointer;
   }
 
-  &._disabled {
+  &._disabled,
+  &:disabled {
     opacity: 0.6;
     pointer-events: none;
   }

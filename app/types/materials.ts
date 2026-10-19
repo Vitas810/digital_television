@@ -6,3 +6,8 @@ export interface Material {
   description_html?: string
   description_json?: string
 }
+
+export type CreateMaterialPayload = Pick<
+  Material,
+  'title' | 'short_description' | 'datetime' | 'description_html' | 'description_json'
+>

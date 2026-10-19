@@ -16,7 +16,27 @@ export default defineNuxtConfig({
   },
 
   /* Подключение модулей */
-  modules: ['nuxt-svgo-loader'],
+  modules: ['nuxt-svgo-loader', 'nuxt-tiptap-editor', 'nuxt-viewport'],
+
+  viewport: {
+    breakpoints: {
+      xs: 402,
+      s: 760,
+      m: 1024,
+      l: 1280,
+      xl: 1440,
+    },
+
+    defaultBreakpoints: {
+      desktop: 'm',
+      mobile: 'xs',
+      tablet: 's',
+    },
+
+    fallbackBreakpoint: 'xs',
+
+    feature: 'minWidth',
+  },
 
   /* alias */
   alias: {

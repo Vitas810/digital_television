@@ -83,7 +83,7 @@ const goBack = () => router.back()
   margin: 0 auto;
 
   & .material__back {
-    padding: var(--size-48) 0;
+    margin: var(--size-48) 0;
   }
 
   & .material__card {

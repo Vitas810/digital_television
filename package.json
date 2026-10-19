@@ -12,8 +12,16 @@
     "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@tiptap/extension-drag-handle": "^3.32.0",
+    "@tiptap/extension-drag-handle-vue-3": "^3.32.0",
+    "@tiptap/extension-node-range": "^3.32.0",
+    "@tiptap/extension-placeholder": "^3.32.0",
+    "@vuepic/vue-datepicker": "^14.0.0",
+    "date-fns": "^4.4.0",
     "nuxt": "^4.6.1",
     "nuxt-svgo-loader": "^0.6.3",
+    "nuxt-tiptap-editor": "^3.4.0",
+    "nuxt-viewport": "^2.6.1",
     "vue": "^3.5.43",
     "vue-router": "^5.4.0"
   },
