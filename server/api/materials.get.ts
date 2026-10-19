@@ -7,7 +7,7 @@ export default defineEventHandler(async (): Promise<Material[]> => {
   } catch {
     throw createError({
       statusCode: 502,
-      statusMessage: 'Не удалось загрузить материалы',
+      message: 'Не удалось загрузить материалы',
     })
   }
 })

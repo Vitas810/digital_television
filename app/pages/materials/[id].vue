@@ -75,7 +75,7 @@ const goBack = () => router.back()
 
 watchEffect(() => {
   if (!pending.value && !error.value && materials.value && !material.value) {
-    showError(createError({ statusCode: 404, statusMessage: 'Страница не найдена' }))
+    showError(createError({ statusCode: 404, message: 'Страница не найдена' }))
   }
 })
 </script>
